@@ -1,0 +1,171 @@
+.contact {
+    width: 100%;
+    background-image: url(../img/contact-bg.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover;
+
+    @include for-laptop {
+        background-size: auto;
+    }
+}
+
+.contact__inner {
+    width: 100%;
+    padding-bottom: 50px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    @include for-laptop {
+        align-items: center;
+        justify-content: center;
+    }
+
+    @include for-phone-only {
+        padding-bottom: 30px;
+    }
+}
+
+.contact__content {
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    @include for-laptop {
+        width: 60%;
+    }
+
+    @include for-tablet-landscape {
+        width: 80%;
+    }
+
+    @include for-phone-only {
+        width: 100%;
+        max-width: 450px;
+    }
+}
+
+.contact__info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0 50px;
+
+    @include for-phone-only {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0 0 30px;
+    }
+}
+
+.contact__item {
+    width: 50%;
+    margin-bottom: 15px;
+
+    @include for-phone-only {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    &:nth-child(2) {
+        text-align: right;
+
+        @include for-phone-only {
+            text-align: center;
+        }
+    }
+}
+
+.contact__title {
+    font-size: 18px;
+    color: $black;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.contact__address {
+    font-size: 16px;
+    color: $black;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.8;
+}
+
+.contact__link {
+    text-decoration: none;
+    display: block;
+    color: $black;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.contact__form {
+    width: 100%;
+
+    @include for-phone-only {
+        text-align: center;
+    }
+}
+
+.form {
+    margin-top: 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    & > ::placeholder {
+        font-family: $font-stack;
+        font-size: 16px;
+        font-weight: 300;
+        color: $black;
+        font-style: italic;
+    }
+
+    & > .form__field:focus {
+        outline: none;
+    }
+}
+
+.form__field {
+    width: 45%;
+    padding: 10px 5px;
+    margin-bottom: 30px;
+    background-color: transparent;
+
+    font-family: $font-stack;
+    color: $black;
+    font-size: 16px;
+
+    border: 0;
+    border-bottom: 1px solid $black;
+
+    @include for-phone-only {
+        width: 100%;
+    }
+
+    &--textarea {
+        margin-bottom: 70px;
+        width: 100%;
+        resize: none;
+        overflow: auto;
+
+        @include for-phone-only {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+.form__btn {
+    margin: 0 auto;
+}

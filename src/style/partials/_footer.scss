@@ -1,0 +1,92 @@
+.footer {
+    width: 100%;
+    padding: 40px 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    @include for-phone-only {
+        flex-direction: column;
+        padding: 20px 0 10px;
+    }
+}
+
+.footer__text {
+    font-size: 16px;
+    font-family: $font-stack;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-weight: 300;
+
+    @include for-phone-only {
+        order: 2;
+        font-size: 14px;
+    }
+}
+
+.footer__social {
+    display: flex;
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+
+    @include for-phone-only {
+        position: static;
+        transform: none;
+        order: 1;
+        margin-bottom: 30px;
+    }
+}
+
+.footer__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid $black;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    z-index: 1;
+
+    @include for-phone-only {
+        margin: 0;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 100%;
+        background-color: $black;
+        pointer-events: none;
+        transition: bottom 0.2s ease-in;
+        z-index: -1;
+    }
+
+    &:hover::before {
+        bottom: 0;
+    }
+
+    &:hover .footer__social-icon {
+        fill: #fff;
+    }
+}
+
+.footer__social-icon {
+    width: 25px;
+    height: 25px;
+    fill: $black;
+    transition: fill 0.2s ease-in;
+}

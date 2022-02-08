@@ -1,0 +1,74 @@
+.btn {
+    display: inline-block;
+
+    font-family: $font-stack;
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    vertical-align: middle;
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+
+    line-height: 1;
+    color: $black;
+    text-align: center;
+
+    border: 1px solid $black;
+
+    transition: color 0.2s ease-in, font-weight 0.2s ease-in;
+    cursor: pointer;
+    z-index: 1;
+
+    &:active {
+        outline: none;
+    }
+
+    + .btn {
+        margin-left: 30px;
+    }
+
+    @include for-phone-only {
+        display: block;
+        width: 100%;
+
+        + .btn {
+            margin-left: 0px;
+            margin-top: 25px;
+        }
+    }
+
+    &--size_sm {
+        padding: 15px 30px;
+        min-width: 100px;
+        max-height: 50px;
+        font-weight: 400;
+    }
+
+    &--style_black {
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 100%;
+            width: 100%;
+            background-color: $black;
+            pointer-events: none;
+            font-weight: normal;
+
+            transition: bottom 0.2s ease-in;
+            z-index: -1;
+        }
+
+        &:hover {
+            color: #fff;
+
+            &::before {
+                bottom: 0;
+            }
+        }
+    }
+}

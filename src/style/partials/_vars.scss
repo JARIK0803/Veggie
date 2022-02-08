@@ -1,0 +1,41 @@
+//web-site font stack: 
+//Merriwether: light, Light italic, regular, bold;
+
+$font-stack: 'Merriweather', serif;
+
+$light-gray: #e6e6e6;
+$medium-gray: #cacaca;
+$dark-gray: #8a8a8a;
+$black: #3c3c3c;
+$white: #fefefe;
+
+$browser-context: 16; // Default
+
+@function em-calc($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+@function rem-calc($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}rem;
+}
+
+@mixin for-laptop {
+    @media (max-width: 1200px) {
+        @content;
+    }
+}
+@mixin for-tablet-landscape {
+    @media (max-width: 991.98px) {
+        @content;
+    }
+}
+@mixin for-tablet-portrait {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+@mixin for-phone-only {
+    @media (max-width: 578px) {
+        @content;
+    }
+}

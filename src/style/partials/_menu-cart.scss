@@ -1,0 +1,108 @@
+.menu-cart {
+    width: 100%;
+    background-color: #fefefe;
+}
+
+.menu-cart__inner {
+    width: 100%;
+    margin-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs {
+    width: 100%;
+    margin-top: 40px;
+    min-height: 370px;
+
+    @include for-tablet-landscape {
+        min-height: 0px;
+    }
+
+    @include for-phone-only {
+        margin-top: 30px;
+    }
+}
+
+.tabs__panel {
+    width: 100%;
+    display: none;
+    position: relative;
+
+    &.active {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        animation: tabsAnim 1s ease;
+
+        @keyframes tabsAnim {
+            0% {
+                top: -30px;
+                opacity: 0;
+            }
+            100%{
+                top: 0;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.tabs__section {
+    width: 47%;
+    color: $black;
+
+    @include for-tablet-landscape {
+        width: 100%;
+    }
+
+    table {
+        width: 90%;
+        margin: 0 auto;
+        table-layout: fixed;
+        border-collapse: collapse;
+        tbody {
+            border: none;
+            tr:nth-child(even) {
+                background: none;
+                & td {
+                    background-image: none;
+                    text-align: left;
+                    font-style: italic;
+                    font-size: 14px;
+                    padding-top: 0;
+                }
+            }
+            td {
+                font-size: 16px;
+                line-height: 1.5;
+                font-weight: 300;
+                padding: 16px 0 0 0;
+                vertical-align: bottom;
+                background-image: radial-gradient($black 1px, white 0px);
+                background-size: 8px 8px;
+                background-repeat: repeat-x;
+                background-position: 0% 90%;
+                span {
+                    background-color: #fff;
+                    text-transform: uppercase;
+                }
+                &:first-child {
+                    text-align: left;
+                    & span {
+                        padding-right: 8px;
+                    }
+                }
+                &:last-child {
+                    text-align: right;
+                    width: 50px;
+                    & span {
+                        padding-left: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
